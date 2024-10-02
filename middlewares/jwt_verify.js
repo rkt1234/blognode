@@ -8,7 +8,6 @@ const verifyJWT = (req, res, next) => {
       if (err) {
         console.error(err);
         res.status(500).json({ msg: "Unauthorized user" });
-        next()
       } else {
         console.log(decoded);
         next();
@@ -17,7 +16,6 @@ const verifyJWT = (req, res, next) => {
   }
   else {
     res.status(500).json({msg : "Unauthorized user"})
-    next()
   }
 };
 module.exports = verifyJWT
